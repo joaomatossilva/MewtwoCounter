@@ -25,7 +25,7 @@ namespace MewtwoCounter.Pages
         public void OnGet()
         {
             Guid counterKey = GetCounterKey();
-            if (counterKey == default && 
+            if (counterKey == default(Guid) && 
                 (!Request.Cookies.TryGetValue(MewTwoCookieName, out string key) || !Guid.TryParse(key, out counterKey)))
             {
                 counterKey = Guid.NewGuid();
@@ -51,7 +51,7 @@ namespace MewtwoCounter.Pages
             Guid counterKey;
             if(!Guid.TryParse(Request.Query["k"], out counterKey))
             {
-                return default;
+                return default(Guid);
             }
 
             var cookieOptions = new CookieOptions
