@@ -33,7 +33,7 @@ namespace MewtwoCounter
             });
 
             services.AddDbContext<CounterContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("CounterDatabase")));
+                options.UseSqlServer(Configuration.GetValue<string>("Data:CounterDatabase:ConnectionString")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
