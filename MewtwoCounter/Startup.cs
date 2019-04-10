@@ -60,7 +60,6 @@ namespace MewtwoCounter
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseCookiePolicy();
 
             app.UseMvc();
         }

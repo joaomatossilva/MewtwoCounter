@@ -16,5 +16,10 @@ namespace MewtwoCounter
 
         public DbSet<Counter> Counters { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Counter>()
+                .HasIndex(c => c.CounterKey);
+        }
     }
 }
