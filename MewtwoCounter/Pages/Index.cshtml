@@ -1,0 +1,19 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Mewtwo Counter</h1>
+    <h2><label>@Model.Count</label></h2>
+
+    @if(Model.Last != null)
+    {
+        <h4>Last: @Model.Last.Date</h4>
+    }
+
+    <form method="post">
+        <input type="submit" class="btn btn-primary" value="Count + 1" />
+    </form>
+</div>
